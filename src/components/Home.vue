@@ -4,10 +4,10 @@
    </v-col>
 
    <v-col md4 xs12 >
-     <v-card v-for="i in 3" :key="i" class="ma-3 ">
+     <v-card v-for="i in auctions" :key="i" class="ma-3 ">
          <v-card-row class="blue-grey darken-1">
              <v-card-title>
-                 <span class="white--text">Kamera Antik</span>
+                 <span class="white--text">{{i.title}}</span>
                  <v-spacer></v-spacer>
              </v-card-title>
          </v-card-row>
@@ -31,13 +31,25 @@
 </template>
 
 <script>
-let host = 'http://localhost:3000/api';
+import axios from 'axios';
+let host = 'http://api.bukalelang.id/';
 export default {
     data() {
         return {
+          auctions: []
         }
     },
-    methods: {
+    // Fetches posts when the component is created.
+    created() {
+      axios.get(host + 'auctions')
+      .then(response => {
+        // JSON responses are automatically parsed.
+        console.log('-------', response.data);
+        this.auctions = response.data.auctions
+      })
+      .catch(e => {
+        console.log(e);
+      })
     }
 }
 </script>
