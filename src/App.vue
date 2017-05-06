@@ -49,6 +49,9 @@
             </v-container>
         </v-content>
     </main>
+    <v-footer class="pink">
+      <div class="text-xs-right">© BukaLelang 2017</div>
+    </v-footer>
 </v-app>
 </template>
 
