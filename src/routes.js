@@ -1,7 +1,7 @@
 import Home from './components/Home.vue'
-import Shop from './components/Shop.vue'
+import DownloadApp from './components/DownloadApp.vue'
 
 export const routes = [
   { path : '', component: Home},
-  { path : '/shop', component: Shop},
+  { path : '/apps', component: DownloadApp},
 ]
