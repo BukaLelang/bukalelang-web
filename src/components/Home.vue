@@ -15,7 +15,7 @@
              <p class="mt-2 grey-text">{{i.description}}</p>
          </v-card-text>
          <v-card-row actions class="grey lighten-4 mt-0">
-             <v-btn flat class="pink--text" large>Ikut Lelang</v-btn>
+             <v-btn flat class="pink--text" large @click.native="gotoAuctionDetail">Ikut Lelang</v-btn>
              <v-spacer></v-spacer>
              <v-btn icon>
                  <v-icon class="pink--text">explore</v-icon>
@@ -50,6 +50,11 @@ export default {
       .catch(e => {
         console.log(e);
       })
+    },
+    methods: {
+      gotoAuctionDetail() {
+        this.$router.push('/lelang')
+      }
     }
 }
 </script>
