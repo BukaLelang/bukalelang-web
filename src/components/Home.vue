@@ -3,19 +3,19 @@
    <v-col xs4>
    </v-col>
    <v-col md4 xs12 >
-     <v-card v-for="i in auctions" :key="i" class="ma-3" >
+     <v-card v-for="auction in auctions" :key="auction" class="ma-3" >
          <v-card-row>
            <div class="thumbnail">
-             <img :src="i.images"  class="portrait" alt="Image" />
+             <img :src="auction.images"  class="portrait" alt="Image" />
            </div>
            <!-- <img :src="i.images" style="width:100%;" alt=""> -->
          </v-card-row>
          <v-card-text class="grey lighten-4 black--text">
-           <span class="headline mb-2">{{i.title}}</span >
-             <p class="mt-2 grey-text">{{i.description}}</p>
+           <span class="headline mb-2">{{auction.title}}</span >
+             <p class="mt-2 grey-text">{{auction.description}}</p>
          </v-card-text>
          <v-card-row actions class="grey lighten-4 mt-0">
-             <v-btn flat class="pink--text" large @click.native="gotoAuctionDetail">Ikut Lelang</v-btn>
+             <v-btn flat class="pink--text" large @click.native="gotoAuctionDetail(auction.slug)">Ikut Lelang</v-btn>
              <v-spacer></v-spacer>
              <v-btn icon>
                  <v-icon class="pink--text">explore</v-icon>
@@ -52,8 +52,8 @@ export default {
       })
     },
     methods: {
-      gotoAuctionDetail() {
-        this.$router.push('/lelang')
+      gotoAuctionDetail(slug) {
+        this.$router.push('/lelang/' + slug)
       }
     }
 }
