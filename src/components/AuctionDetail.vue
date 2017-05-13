@@ -11,8 +11,8 @@
            <!-- <img :src="i.images" style="width:100%;" alt=""> -->
          </v-card-row>
          <v-card-text class="grey lighten-4 black--text">
-           <span class="headline mb-2">Ini judul</span >
-             <p class="mt-2 grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+           <span class="headline mb-2">{{ auction.title }}</span >
+             <p class="mt-2 grey-text">{{ auction.description }}</p>
          </v-card-text>
          <v-card-row actions class="grey mt-0">
              <span>Countdown</span>
@@ -51,17 +51,15 @@ let host = 'http://api.bukalelang.id/';
 export default {
     data() {
         return {
-          auctions: []
+          auction: {}
         }
     },
     // Fetches posts when the component is created.
     created() {
-      console.log('ini berhasil dibuat');
-      axios.get(host + 'auctions')
+      axios.get(host + 'auctions/slug/' + this.$route.params.slug)
       .then(response => {
         // JSON responses are automatically parsed.
-        console.log('-------', response.data);
-        this.auctions = response.data.auctions
+        this.auction = response.data
       })
       .catch(e => {
         console.log(e);
