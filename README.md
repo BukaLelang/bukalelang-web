@@ -2,6 +2,11 @@
 
 > A SPA for BukaLelang.id
 
+
+## Tech Stack
+
+[Vuetify](https://vuetifyjs.com/)
+
 ## Build Setup
 
 ``` bash
