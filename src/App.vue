@@ -3,7 +3,9 @@
     <header>
         <v-toolbar class="pink">
             <v-toolbar-side-icon class="hidden-md-and-up" @click.native.stop="sidebar2 = !sidebar2"></v-toolbar-side-icon>
-            <v-toolbar-title class="hidden-sm-and-down" @click.native="gotoHomepage">BukaLelang</v-toolbar-title>
+            <span @click.native="gotoHomepage">
+              <v-toolbar-title class="hidden-sm-and-down" >BukaLelang</v-toolbar-title>
+            </span>
             <v-text-field prepend-icon="search" label="Cari lelang..." hide-details single-line dark class="pr-10"></v-text-field>
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-toolbar-item @click.native="gotoHomepage">Lelang</v-toolbar-item>
