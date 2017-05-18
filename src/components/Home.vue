@@ -31,7 +31,7 @@
 
 <script>
 import axios from 'axios';
-let host = 'http://api.bukalelang.id/';
+let host = 'https://api.bukalelang.id/';
 export default {
     data() {
         return {
