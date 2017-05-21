@@ -7,7 +7,7 @@
        <p class="pa-3 text-md-center text-lg-center text-xs-center">Saat ini BukaLelang versi Web belum tersedia, <br>namun, Aplikasi BukaLelang sudah dapat di gunakan di Android dan (segera) di iOS</p>
         <v-row>
          <v-col xs12 md6 class="text-xs-center text-md-right" >
-            <v-btn class="pink text-xs-right text-md-right text-lg-right">Download Android
+            <v-btn class="pink text-xs-right text-md-right text-lg-right" @click.native="downloadAndroidApp">Download Android
                <v-icon right>get_app</v-icon>
              </v-btn>
         </v-col>
@@ -38,6 +38,11 @@ export default {
     created() {
       console.log('ini berhasil dibuat');
 
+    },
+    methods: {
+      downloadAndroidApp() {
+        window.location.href = 'https://s3-ap-southeast-1.amazonaws.com/elasticbeanstalk-ap-southeast-1-806473761630/mobile-app/bukalelang.apk'
+      }
     }
 }
 </script>
