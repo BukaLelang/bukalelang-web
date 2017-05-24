@@ -6,7 +6,7 @@
      <v-card class="ma-3" >
          <v-card-row>
            <div class="thumbnail">
-             <img src="https://s1.bukalapak.com/img/1353479911/large/picture.jpg"  class="portrait" alt="Image" />
+             <img :src="auction.images"  class="portrait" alt="Image" />
            </div>
            <!-- <img :src="i.images" style="width:100%;" alt=""> -->
          </v-card-row>

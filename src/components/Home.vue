@@ -6,7 +6,7 @@
      <v-card v-for="auction in auctions" :key="auction" class="ma-3" >
          <v-card-row>
            <div class="thumbnail">
-             <img :src="auction.images"  class="portrait" alt="Image" />
+             <img :src="auction.images[0]"  class="portrait" alt="Image" />
            </div>
            <!-- <img :src="i.images" style="width:100%;" alt=""> -->
          </v-card-row>
