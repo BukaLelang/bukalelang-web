@@ -41,7 +41,7 @@ export default {
     },
     methods: {
       downloadAndroidApp() {
-        window.location.href = 'https://s3-ap-southeast-1.amazonaws.com/elasticbeanstalk-ap-southeast-1-806473761630/mobile-app/bukalelang.apk'
+        window.location.href = 'https://s3-ap-southeast-1.amazonaws.com/elasticbeanstalk-ap-southeast-1-806473761630/mobile-app/BukaLelang.apk'
       }
     }
 }

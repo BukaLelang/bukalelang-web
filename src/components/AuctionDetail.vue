@@ -26,7 +26,7 @@
              <p class="mt-2 grey-text text-md-center text-lg-center text-xs-center">Kamu belum bisa mengikuti lelang di versi Web, unduh aplikasi BukaLelang untuk Android dan (segera) di iOS  untuk ikutan lelang sekarang juga!</p>
              <v-row>
               <v-col xs12 md6 class="text-xs-center text-md-right" >
-                 <v-btn class="pink text-xs-right text-md-right text-lg-right">Download Android
+                 <v-btn class="pink text-xs-right text-md-right text-lg-right" @click.native="downloadAndroidApp">Download Android
                     <v-icon right>get_app</v-icon>
                   </v-btn>
              </v-col>
@@ -64,6 +64,11 @@ export default {
       .catch(e => {
         console.log(e);
       })
+    },
+    methods: {
+      downloadAndroidApp() {
+        window.location.href = 'https://s3-ap-southeast-1.amazonaws.com/elasticbeanstalk-ap-southeast-1-806473761630/mobile-app/BukaLelang.apk'
+      }
     }
 }
 </script>
